@@ -12,7 +12,7 @@ describe("Reducer", function() {
         connectionData: 'connectionData',
         username: 'username',
         password: 'password',
-        platformOs: "platformOs",
+        platformOS: "platformOs",
         platformVersion: "platformVersion",
         platformEdition: "platformEdition",
         platformBuildNumber: "platformBuildNumber",
@@ -27,37 +27,6 @@ describe("Reducer", function() {
 
       const output = reducer(state, action);
       output.wdcAttrs.should.deepEqual(newAttrs);
-    });
-  });
-
-  describe("SET_FILTER_INFO", function() {
-    it("Should Set filterInfo", function () {
-      const newFilters = {
-        selectedTable: 'selectedTable',
-        selectedColumn: 'selectedColumn',
-        selectedFK: 'selectedFK',
-      };
-
-      const action = {
-        type: "SET_FILTER_INFO",
-        payload: newFilters
-      };
-
-      const output = reducer(state, action);
-      output.filterInfo.should.deepEqual(newFilters);
-    });
-  });
-
-  describe("SET_ACTIVE_JOIN_FILTER", function() {
-    it("Should Set activeJoinFilter", function () {
-      const newFilter = 'tableId';
-      const action = {
-        type: "SET_ACTIVE_JOIN_FILTER",
-        payload: newFilter
-      };
-
-      const output = reducer(state, action);
-      output.activeJoinFilter.should.deepEqual(newFilter);
     });
   });
 
@@ -284,7 +253,7 @@ describe("Reducer", function() {
           connectionData: 'data',
           username: 'name',
           password: 'pw',
-          platformOs: "os",
+          platformOS: "os",
           platformVersion: "vers",
           platformEdition: "ed",
           platformBuildNumber: "bn",

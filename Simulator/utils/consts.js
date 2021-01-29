@@ -17,7 +17,6 @@ export const eventNames = {
   SHUTDOWN_CB: 'shutdownCallback',
   ABORT: 'abortWithError',
   ABORT_AUTH: 'abortForAuth',
-  REPORT_PROGRESS: 'reportProgress',
 };
 
 export const phases = {
@@ -32,19 +31,12 @@ export const defaultWdcAttrs = {
   username: '',
   password: '',
   usernameAlias: '',
-  platformOs: '',
+  platformOS: '',
   platformEdition: '',
   platformVersion: '',
   platformBuildNumber: '',
   authPurpose: 'ephemeral',
   locale: 'en-us',
-};
-
-// Used for Join Filtering advanced feature
-export const defaultFilterInfo = {
-  selectedTable: '',
-  selectedColumn: '',
-  selectedFK: '',
 };
 
 export const defaultShowAdvanced = Cookie.getJSON('showAdvanced') || false;
@@ -54,7 +46,7 @@ export const samples = [
   '../Examples/html/earthquakeMultitable.html',
   '../Examples/html/earthquakeMultilingual.html',
   '../Examples/html/IncrementalRefreshConnector.html',
-  '../Examples/html/JoinFilteringExample.html',
+  '../Examples/html/MadMoneyScraper.html',
 ];
 
 export const defaultMostRecentUrls = Cookie.getJSON('mostRecentUrls') || [...samples];
@@ -71,8 +63,6 @@ export const WINDOW_PROPS = 'height=500,width=800';
 export const defaultState = {
   // Originally wdcProps, renamed to avoid confusion with component props
   wdcAttrs: defaultWdcAttrs,
-  filterInfo: defaultFilterInfo,
-  activeJoinFilter: null,
   addressBarUrl: defaultUrl,
   wdcUrl: defaultUrl,
   mostRecentUrls: defaultMostRecentUrls,

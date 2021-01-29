@@ -37,15 +37,13 @@ describe('Messaging Thunks', function() {
           connectionName: "name",
           connectionData: "data",
           username: "username",
-          usernameAlias: "usernameAlias",
           password: "password",
-          platformOs: "platformOs",
+          platformOS: "platformOs",
           platformVersion: "platformVersion",
           platformEdition: "platformEdition",
           platformBuildNumber: "platformBuildNumber",
           authPurpose: "ephemeral",
-          locale: "en-us",
-          usernameAlias: ""
+          locale: "en-us"
         },
         version: "2.0.1"
       };

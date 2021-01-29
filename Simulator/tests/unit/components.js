@@ -15,7 +15,6 @@ import GatherDataFrame from '../../components/GatherDataFrame.jsx';
 import StandardConnections from '../../components/StandardConnections.jsx';
 import JoinViz from '../../components/JoinViz.jsx';
 import Validator from '../../components/StandardConnectionValidator.jsx';
-import JoinFilter from '../../components/JoinFilter.jsx';
 
 import * as consts from '../../utils/consts.js';
 import * as clickedOn from '../../utils/canvas_helper.js'
@@ -121,9 +120,8 @@ describe("Components", function() {
             connectionName: "",
             connectionData: "",
             username: "",
-            usernameAlias: "",
             password: "",
-            platformOs: "",
+            platformOS: "",
             platformVersion: "",
             platformEdition: "",
             platformBuildNumber: "",
@@ -143,9 +141,8 @@ describe("Components", function() {
         connectionName: "name",
         connectionData: "",
         username: "",
-        usernameAlias: "",
         password: "",
-        platformOs: "",
+        platformOS: "",
         platformVersion: "",
         platformEdition: "",
         platformBuildNumber: "",
@@ -156,33 +153,6 @@ describe("Components", function() {
       instance.handleAttrChange(event);
       spy.calledOnce.should.be.true();
       spy.calledWith(newAttrs).should.be.true();
-    });
-  });
-
-  describe("JoinFilter", function() {
-    let joinFilter;
-    let instance;
-
-    it("Should Render", function () {
-      joinFilter = shallow(
-        <JoinFilter
-          tableColumns={[]}
-          filtertableTableNames={[]}
-          filtertableColumnMap={{}}
-          filterInfo={{
-            selectedTable: "",
-            selectedColumn: "",
-            selectedFK: "",
-          }}
-          isActive={true}
-          setJoinFilter={()=>{}}
-          setIsActive={()=>{}}
-          filteredFecth={()=>{}}
-        />
-      );
-
-      instance = joinFilter.instance();
-      joinFilter.should.be.ok();
     });
   });
 
@@ -219,10 +189,6 @@ describe("Components", function() {
           fetchInProgress={false}
           getTableDataCallback={()=>{}}
           tables={tables}
-          filterInfo={{}}
-          showAdvanced={false}
-          setActiveJoinFilter={() => {}}
-          setFilterInfo={() => {}}
         />
       );
       dataTables.should.be.ok();
@@ -246,11 +212,6 @@ describe("Components", function() {
         dataType: "int",
       }]
     };
-    const filterInfo = {
-      selectedTable: "",
-      selectedColumn: "",
-      selectedFK: "",
-    }
     let tableData = [{ "idx": 0 }];
 
     it("Should Render", function () {
@@ -260,8 +221,6 @@ describe("Components", function() {
           tableData={tableData}
           getTableDataCallback={spy}
           fetchInProgress={false}
-          filterInfo={filterInfo}
-          activeFilterData={[]}
         />
       );
 
@@ -274,14 +233,9 @@ describe("Components", function() {
     it("Should Fetch The Right Data", function () {
       instance.freshFetch();
       instance.incrementalRefresh();
-      instance.filteredFetch();
-      spy.calledThrice.should.be.true();
-      spy.calledWith([{ tableInfo, incrementValue: undefined,
-                        filterColumnId: undefined, filterValues: undefined}], true).should.be.true();
-      spy.calledWith([{ tableInfo, incrementValue: 0,
-                        filterColumnId: undefined, filterValues: undefined}], false).should.be.true();
-      spy.calledWith([{ tableInfo, incrementValue: undefined,
-                        filterColumnId: "", filterValues: []}], true).should.be.true();
+      spy.calledTwice.should.be.true();
+      spy.calledWith([{ tableInfo, incrementValue: undefined }], true).should.be.true();
+      spy.calledWith([{ tableInfo, incrementValue: 0 }], false).should.be.true();
     });
 
     it("Should Have the Right Column Info", function () {

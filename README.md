@@ -1,23 +1,8 @@
-<img src="img/PL-Tableau.png">
+# Tableau Web Data Connector SDK
+[![Coverage Status](https://coveralls.io/repos/github/tableau/webdataconnector/badge.svg?branch=master)](https://coveralls.io/github/tableau/webdataconnector?branch=master) [![Build Status](https://travis-ci.org/tableau/webdataconnector.svg?branch=master)](https://travis-ci.org/jagreene/webdataconnector)
 
-# Fantasy Premier League Web Data Connectors
+Use the Tableau Web Data Connector (WDC) to connect to web data sources from Tableau. This is the repository for the Tableau WDC SDK, which includes developer samples and a simulator to help you create your connectors.
 
-Use these Web Data Connectors (WDC) to connect to the Fantasy Premier League REST API from Tableau.
+[Visit the project website and documentation here](http://tableau.github.io/webdataconnector/).
 
-There are 4 connectors as follows:
-
-1. Current Stats. Detailed stats for this season
-2. Past Season Stats. Overall stats for previous seasons
-3. Player and Team Stats. Reference tables for Players and Teams with metric totals so far this season
-4. Events Stats. Overall gameweek specific stats
-
-[Visit the website here](https://puertaverde.co.uk/ventana/data/fpl-web-data-connector/)
-
-
-
-[WDC here](https://r3dcobbler.github.io/FPL19-20/)
-
-
-
-
-
+Want to contribute to the WDC? See our [contribution guidelines](http://tableau.github.io/).
