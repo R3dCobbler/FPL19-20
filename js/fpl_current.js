@@ -1,5 +1,3 @@
-var os = require('os'); os.tmpDir = os.tmpdir;
-
 (function() {
   // Create the connector object
   let myConnector = tableau.makeConnector();
