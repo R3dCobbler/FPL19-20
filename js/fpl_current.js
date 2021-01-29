@@ -1,7 +1,9 @@
+var os = require('os'); os.tmpDir = os.tmpdir;
+
 (function() {
     // Create the connector object
     let myConnector = tableau.makeConnector();
-    let myProxy = "https://cors-anywhere.herokuapp.com/";
+    let myProxy = 'https://cors-anywhere.herokuapp.com/';
   
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
@@ -301,7 +303,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
       $("#submitButton").click(function() {
-        tableau.connectionName = "FPL 2019-20 Current Season Stats"; // This will be the data source name in Tableau
+        tableau.connectionName = "FPL 2020-21 Current Season Stats"; // This will be the data source name in Tableau
         $.getJSON(
           myProxy + "https://fantasy.premierleague.com/api/bootstrap-static/",
           function(resp) {
