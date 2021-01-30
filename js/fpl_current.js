@@ -203,8 +203,8 @@
   //helper function to get player history for current season
   function getHistory(table, doneCallback) {
     let promises = [];
-    let noPlayers = parseInt(tableau.connectionData); 
-  //   let noPlayers = 700; // Modified for testing since I kept getting hit with "too many requests" errors
+    // let noPlayers = parseInt(tableau.connectionData); 
+    let noPlayers = 670; // Modified for testing since I kept getting hit with "too many requests" errors
 
     for (let i = 1; i <= noPlayers; i++) {
       let apiCall =
@@ -307,6 +307,7 @@
         function(resp) {
           //resp.toJSON();
           tableau.connectionData = resp.elements.length.toString();
+          console.log(tableau.connectionData)
           tableau.submit(); // This sends the connector object to Tableau
         }
       );
