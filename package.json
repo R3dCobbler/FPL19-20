@@ -31,7 +31,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.11.0",
     "browser-sync": "^2.26.7",
-    "chromedriver": "^2.21.2",
+    "chromedriver": "^119.0.1",
     "coveralls": "^2.11.9",
     "enzyme": "^2.3.0",
     "eslint": "^4.18.2",
